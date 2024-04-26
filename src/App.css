@@ -1,0 +1,38 @@
+.App {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.mainContainer {
+  display: flex;
+  border: 2px solid black;
+}
+
+.mainContainer > section {
+  border: 2px solid black;
+}
+
+.container {
+  height: 25vh;
+  width: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.first,
+.second,
+.third,
+.fourth,
+.fifth,
+.sixth {
+  border-bottom: 4px solid black;
+}
+
+.ninth {
+  font-size: 100rem;
+}
