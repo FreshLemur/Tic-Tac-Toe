@@ -26,39 +26,84 @@ export default function App() {
   const [isEighthClicked, setIsEighthClicked] = useState<boolean>(false);
   const [isNinethClicked, setisNinethClicked] = useState<boolean>(false);
 
-  const first = () => {
-    const isMove = ticTacToeCounter;
-    console.log(isMove);
+  const endGame = () => {
+    if (ticTacToeCounter === 10) {
+      setTicTacToeCounter(1);
+      setFirstt(null);
+      setSecondd(null);
+      setThirdd(null);
+      setFourthh(null);
+      setFifthh(null);
+      setSixthh(null);
+      setSeventhh(null);
+      setEighthh(null);
+      setNinthh(null);
 
+      setIsFirstClicked(false);
+      setIsSecondClicked(false);
+      setIsThirdClicked(false);
+      setIsFourthClicked(false);
+      setIsFifthClicked(false);
+      setIsSixthClicked(false);
+      setIsSeventhClicked(false);
+      setIsEighthClicked(false);
+      setisNinethClicked(false);
+    }
+  };
+  endGame();
+
+  const first = () => {
     if (isFirstClicked) return;
 
-    if (isMove === 1) {
+    if (
+      ticTacToeCounter === 1 ||
+      ticTacToeCounter === 3 ||
+      ticTacToeCounter === 5 ||
+      ticTacToeCounter === 7 ||
+      ticTacToeCounter === 9
+    ) {
       setFirstt(<XSVG />);
-      setTicTacToeCounter(ticTacToeCounter - 1);
       setIsFirstClicked(true);
+      setTicTacToeCounter(ticTacToeCounter + 1);
       return;
     }
-    if (isMove === 0) {
+    if (
+      ticTacToeCounter === 2 ||
+      ticTacToeCounter === 4 ||
+      ticTacToeCounter === 6 ||
+      ticTacToeCounter === 8 ||
+      ticTacToeCounter === 10
+    ) {
       setFirstt(<OSVG />);
-      setTicTacToeCounter(ticTacToeCounter + 1);
       setIsFirstClicked(true);
+      setTicTacToeCounter(ticTacToeCounter + 1);
       return;
     }
   };
 
   const second = () => {
-    const isMove = ticTacToeCounter;
-    console.log(isMove);
-
     if (isSecondClicked) return;
 
-    if (isMove === 1) {
+    if (
+      ticTacToeCounter === 1 ||
+      ticTacToeCounter === 3 ||
+      ticTacToeCounter === 5 ||
+      ticTacToeCounter === 7 ||
+      ticTacToeCounter === 9
+    ) {
       setSecondd(<XSVG />);
-      setTicTacToeCounter(ticTacToeCounter - 1);
+      setTicTacToeCounter(ticTacToeCounter + 1);
       setIsSecondClicked(true);
+
       return;
     }
-    if (isMove === 0) {
+    if (
+      ticTacToeCounter === 2 ||
+      ticTacToeCounter === 4 ||
+      ticTacToeCounter === 6 ||
+      ticTacToeCounter === 8 ||
+      ticTacToeCounter === 10
+    ) {
       setSecondd(<OSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsSecondClicked(true);
@@ -67,18 +112,27 @@ export default function App() {
   };
 
   const third = () => {
-    const isMove = ticTacToeCounter;
-    console.log(isMove);
-
     if (isThirdClicked) return;
 
-    if (isMove === 1) {
+    if (
+      ticTacToeCounter === 1 ||
+      ticTacToeCounter === 3 ||
+      ticTacToeCounter === 5 ||
+      ticTacToeCounter === 7 ||
+      ticTacToeCounter === 9
+    ) {
       setThirdd(<XSVG />);
-      setTicTacToeCounter(ticTacToeCounter - 1);
+      setTicTacToeCounter(ticTacToeCounter + 1);
       setIsThirdClicked(true);
       return;
     }
-    if (isMove === 0) {
+    if (
+      ticTacToeCounter === 2 ||
+      ticTacToeCounter === 4 ||
+      ticTacToeCounter === 6 ||
+      ticTacToeCounter === 8 ||
+      ticTacToeCounter === 10
+    ) {
       setThirdd(<OSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsThirdClicked(true);
@@ -87,18 +141,27 @@ export default function App() {
   };
 
   const fourth = () => {
-    const isMove = ticTacToeCounter;
-    console.log(isMove);
-
     if (isFourthClicked) return;
 
-    if (isMove === 1) {
+    if (
+      ticTacToeCounter === 1 ||
+      ticTacToeCounter === 3 ||
+      ticTacToeCounter === 5 ||
+      ticTacToeCounter === 7 ||
+      ticTacToeCounter === 9
+    ) {
       setFourthh(<XSVG />);
-      setTicTacToeCounter(ticTacToeCounter - 1);
+      setTicTacToeCounter(ticTacToeCounter + 1);
       setIsFourthClicked(true);
       return;
     }
-    if (isMove === 0) {
+    if (
+      ticTacToeCounter === 2 ||
+      ticTacToeCounter === 4 ||
+      ticTacToeCounter === 6 ||
+      ticTacToeCounter === 8 ||
+      ticTacToeCounter === 10
+    ) {
       setFourthh(<OSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsFourthClicked(true);
@@ -107,18 +170,27 @@ export default function App() {
   };
 
   const fifth = () => {
-    const isMove = ticTacToeCounter;
-    console.log(isMove);
-
     if (isFifthClicked) return;
 
-    if (isMove === 1) {
+    if (
+      ticTacToeCounter === 1 ||
+      ticTacToeCounter === 3 ||
+      ticTacToeCounter === 5 ||
+      ticTacToeCounter === 7 ||
+      ticTacToeCounter === 9
+    ) {
       setFifthh(<XSVG />);
-      setTicTacToeCounter(ticTacToeCounter - 1);
+      setTicTacToeCounter(ticTacToeCounter + 1);
       setIsFifthClicked(true);
       return;
     }
-    if (isMove === 0) {
+    if (
+      ticTacToeCounter === 2 ||
+      ticTacToeCounter === 4 ||
+      ticTacToeCounter === 6 ||
+      ticTacToeCounter === 8 ||
+      ticTacToeCounter === 10
+    ) {
       setFifthh(<OSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsFifthClicked(true);
@@ -127,18 +199,27 @@ export default function App() {
   };
 
   const sixth = () => {
-    const isMove = ticTacToeCounter;
-    console.log(isMove);
-
     if (isSixthClicked) return;
 
-    if (isMove === 1) {
+    if (
+      ticTacToeCounter === 1 ||
+      ticTacToeCounter === 3 ||
+      ticTacToeCounter === 5 ||
+      ticTacToeCounter === 7 ||
+      ticTacToeCounter === 9
+    ) {
       setSixthh(<XSVG />);
-      setTicTacToeCounter(ticTacToeCounter - 1);
+      setTicTacToeCounter(ticTacToeCounter + 1);
       setIsSixthClicked(true);
       return;
     }
-    if (isMove === 0) {
+    if (
+      ticTacToeCounter === 2 ||
+      ticTacToeCounter === 4 ||
+      ticTacToeCounter === 6 ||
+      ticTacToeCounter === 8 ||
+      ticTacToeCounter === 10
+    ) {
       setSixthh(<OSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsSixthClicked(true);
@@ -147,18 +228,27 @@ export default function App() {
   };
 
   const seventh = () => {
-    const isMove = ticTacToeCounter;
-    console.log(isMove);
-
     if (isSeventhClicked) return;
 
-    if (isMove === 1) {
+    if (
+      ticTacToeCounter === 1 ||
+      ticTacToeCounter === 3 ||
+      ticTacToeCounter === 5 ||
+      ticTacToeCounter === 7 ||
+      ticTacToeCounter === 9
+    ) {
       setSeventhh(<XSVG />);
-      setTicTacToeCounter(ticTacToeCounter - 1);
+      setTicTacToeCounter(ticTacToeCounter + 1);
       setIsSeventhClicked(true);
       return;
     }
-    if (isMove === 0) {
+    if (
+      ticTacToeCounter === 2 ||
+      ticTacToeCounter === 4 ||
+      ticTacToeCounter === 6 ||
+      ticTacToeCounter === 8 ||
+      ticTacToeCounter === 10
+    ) {
       setSeventhh(<OSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsSeventhClicked(true);
@@ -167,18 +257,27 @@ export default function App() {
   };
 
   const eighth = () => {
-    const isMove = ticTacToeCounter;
-    console.log(isMove);
-
     if (isEighthClicked) return;
 
-    if (isMove === 1) {
+    if (
+      ticTacToeCounter === 1 ||
+      ticTacToeCounter === 3 ||
+      ticTacToeCounter === 5 ||
+      ticTacToeCounter === 7 ||
+      ticTacToeCounter === 9
+    ) {
       setEighthh(<XSVG />);
-      setTicTacToeCounter(ticTacToeCounter - 1);
+      setTicTacToeCounter(ticTacToeCounter + 1);
       setIsEighthClicked(true);
       return;
     }
-    if (isMove === 0) {
+    if (
+      ticTacToeCounter === 2 ||
+      ticTacToeCounter === 4 ||
+      ticTacToeCounter === 6 ||
+      ticTacToeCounter === 8 ||
+      ticTacToeCounter === 10
+    ) {
       setEighthh(<OSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsEighthClicked(true);
@@ -187,18 +286,27 @@ export default function App() {
   };
 
   const ninth = () => {
-    const isMove = ticTacToeCounter;
-    console.log(isMove);
-
     if (isNinethClicked) return;
 
-    if (isMove === 1) {
+    if (
+      ticTacToeCounter === 1 ||
+      ticTacToeCounter === 3 ||
+      ticTacToeCounter === 5 ||
+      ticTacToeCounter === 7 ||
+      ticTacToeCounter === 9
+    ) {
       setNinthh(<XSVG />);
-      setTicTacToeCounter(ticTacToeCounter - 1);
+      setTicTacToeCounter(ticTacToeCounter + 1);
       setisNinethClicked(true);
       return;
     }
-    if (isMove === 0) {
+    if (
+      ticTacToeCounter === 2 ||
+      ticTacToeCounter === 4 ||
+      ticTacToeCounter === 6 ||
+      ticTacToeCounter === 8 ||
+      ticTacToeCounter === 10
+    ) {
       setNinthh(<OSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setisNinethClicked(true);

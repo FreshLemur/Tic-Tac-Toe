@@ -33,6 +33,14 @@
   border-bottom: 4px solid black;
 }
 
-.ninth {
-  font-size: 100rem;
+.first:hover,
+.second:hover,
+.third:hover,
+.fourth:hover,
+.fifth:hover,
+.sixth:hover,
+.seventh:hover,
+.eighth:hover,
+.ninth:hover {
+  background-color: blueviolet;
 }
