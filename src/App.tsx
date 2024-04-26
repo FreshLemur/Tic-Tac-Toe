@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import OSVG from "./OSVG";
 import XSVG from "./XSVG";
 
 export default function App() {
   const [ticTacToeCounter, setTicTacToeCounter] = useState<number>(1);
+  const [xWinCounter, setXWinCounter] = useState<number>(0);
+  const [oWinCounter, setOWinCounter] = useState<number>(0);
 
   const [firstt, setFirstt] = useState<any>();
   const [secondd, setSecondd] = useState<any>();
@@ -26,31 +28,145 @@ export default function App() {
   const [isEighthClicked, setIsEighthClicked] = useState<boolean>(false);
   const [isNinethClicked, setisNinethClicked] = useState<boolean>(false);
 
-  const endGame = () => {
-    if (ticTacToeCounter === 10) {
-      setTicTacToeCounter(1);
-      setFirstt(null);
-      setSecondd(null);
-      setThirdd(null);
-      setFourthh(null);
-      setFifthh(null);
-      setSixthh(null);
-      setSeventhh(null);
-      setEighthh(null);
-      setNinthh(null);
+  const [firstForWin, setFirstForWin] = useState<number>();
+  const [secondForWin, setSecondForWin] = useState<number>();
+  const [thirdForWin, setThirdForWin] = useState<number>();
+  const [fourthForWin, setFourthForWin] = useState<number>();
+  const [fifthForWin, setFifthForWin] = useState<number>();
+  const [sixthForWin, setSixthForWin] = useState<number>();
+  const [seventhForWin, setSeventhForWin] = useState<number>();
+  const [eighthForWin, setEighthForWin] = useState<number>();
+  const [ninethForWin, setNinethForWin] = useState<number>();
 
-      setIsFirstClicked(false);
-      setIsSecondClicked(false);
-      setIsThirdClicked(false);
-      setIsFourthClicked(false);
-      setIsFifthClicked(false);
-      setIsSixthClicked(false);
-      setIsSeventhClicked(false);
-      setIsEighthClicked(false);
-      setisNinethClicked(false);
+  const endGame = () => {
+    console.log(firstForWin);
+    console.log(fourthForWin);
+    console.log(seventhForWin);
+
+    // If x Winned
+    if (firstForWin === 1 && secondForWin === 1 && thirdForWin === 1) {
+      alert("x WIN");
+      setXWinCounter(xWinCounter + 1);
+      end();
+    }
+    if (firstForWin === 1 && fourthForWin === 1 && seventhForWin === 1) {
+      alert("x WIN");
+      setXWinCounter(xWinCounter + 1);
+      end();
+    }
+    if (firstForWin === 1 && fifthForWin === 1 && ninethForWin === 1) {
+      alert("x WIN");
+      setXWinCounter(xWinCounter + 1);
+      end();
+    }
+    if (seventhForWin === 1 && eighthForWin === 1 && ninethForWin === 1) {
+      alert("x WIN");
+      setXWinCounter(xWinCounter + 1);
+      end();
+    }
+    if (thirdForWin === 1 && sixthForWin === 1 && ninethForWin === 1) {
+      alert("x WIN");
+      setXWinCounter(xWinCounter + 1);
+      end();
+    }
+    if (thirdForWin === 1 && fifthForWin === 1 && seventhForWin === 1) {
+      alert("x WIN");
+      setXWinCounter(xWinCounter + 1);
+      end();
+    }
+    if (secondForWin === 1 && fifthForWin === 1 && eighthForWin === 1) {
+      alert("x WIN");
+      setXWinCounter(xWinCounter + 1);
+      end();
+    }
+    if (fourthForWin === 1 && fifthForWin === 1 && sixthForWin === 1) {
+      alert("x WIN");
+      setXWinCounter(xWinCounter + 1);
+      end();
+    }
+
+    // If O Winned
+    if (firstForWin === 0 && secondForWin === 0 && thirdForWin === 0) {
+      alert("o WIN");
+      setOWinCounter(oWinCounter + 1);
+      end();
+    }
+    if (firstForWin === 0 && fourthForWin === 0 && seventhForWin === 0) {
+      alert("o WIN");
+      setOWinCounter(oWinCounter + 1);
+      end();
+    }
+    if (firstForWin === 0 && fifthForWin === 0 && ninethForWin === 0) {
+      alert("o WIN");
+      setOWinCounter(oWinCounter + 1);
+      end();
+    }
+    if (seventhForWin === 0 && eighthForWin === 0 && ninethForWin === 0) {
+      alert("o WIN");
+      setOWinCounter(oWinCounter + 1);
+      end();
+    }
+    if (thirdForWin === 0 && sixthForWin === 0 && ninethForWin === 0) {
+      alert("o WIN");
+      setOWinCounter(oWinCounter + 1);
+      end();
+    }
+    if (thirdForWin === 0 && fifthForWin === 0 && seventhForWin === 0) {
+      alert("o WIN");
+      setOWinCounter(oWinCounter + 1);
+      end();
+    }
+    if (secondForWin === 0 && fifthForWin === 0 && eighthForWin === 0) {
+      alert("o WIN");
+      setOWinCounter(oWinCounter + 1);
+      end();
+    }
+    if (fourthForWin === 0 && fifthForWin === 0 && sixthForWin === 0) {
+      alert("o WIN");
+      setOWinCounter(oWinCounter + 1);
+      end();
+    }
+
+    if (ticTacToeCounter === 10) {
+      end();
     }
   };
-  endGame();
+
+  const end = () => {
+    setTicTacToeCounter(1);
+    setFirstt(null);
+    setSecondd(null);
+    setThirdd(null);
+    setFourthh(null);
+    setFifthh(null);
+    setSixthh(null);
+    setSeventhh(null);
+    setEighthh(null);
+    setNinthh(null);
+    setIsFirstClicked(false);
+    setIsSecondClicked(false);
+    setIsThirdClicked(false);
+    setIsFourthClicked(false);
+    setIsFifthClicked(false);
+    setIsSixthClicked(false);
+    setIsSeventhClicked(false);
+    setIsEighthClicked(false);
+    setisNinethClicked(false);
+  };
+
+  useEffect(() => {
+    endGame();
+  }, [
+    firstForWin,
+    secondForWin,
+    thirdForWin,
+    fourthForWin,
+    fifthForWin,
+    sixthForWin,
+    seventhForWin,
+    eighthForWin,
+    ninethForWin,
+  ]); // виклик функції endGame при зміні цих станів
 
   const first = () => {
     if (isFirstClicked) return;
@@ -65,6 +181,8 @@ export default function App() {
       setFirstt(<XSVG />);
       setIsFirstClicked(true);
       setTicTacToeCounter(ticTacToeCounter + 1);
+      setFirstForWin(1);
+
       return;
     }
     if (
@@ -77,6 +195,7 @@ export default function App() {
       setFirstt(<OSVG />);
       setIsFirstClicked(true);
       setTicTacToeCounter(ticTacToeCounter + 1);
+      setFirstForWin(0);
       return;
     }
   };
@@ -94,6 +213,7 @@ export default function App() {
       setSecondd(<XSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsSecondClicked(true);
+      setSecondForWin(1);
 
       return;
     }
@@ -107,6 +227,7 @@ export default function App() {
       setSecondd(<OSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsSecondClicked(true);
+      setSecondForWin(0);
       return;
     }
   };
@@ -124,6 +245,8 @@ export default function App() {
       setThirdd(<XSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsThirdClicked(true);
+      setThirdForWin(1);
+
       return;
     }
     if (
@@ -136,6 +259,7 @@ export default function App() {
       setThirdd(<OSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsThirdClicked(true);
+      setThirdForWin(0);
       return;
     }
   };
@@ -153,6 +277,7 @@ export default function App() {
       setFourthh(<XSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsFourthClicked(true);
+      setFourthForWin(1);
       return;
     }
     if (
@@ -165,6 +290,7 @@ export default function App() {
       setFourthh(<OSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsFourthClicked(true);
+      setFourthForWin(0);
       return;
     }
   };
@@ -182,6 +308,7 @@ export default function App() {
       setFifthh(<XSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsFifthClicked(true);
+      setFifthForWin(1);
       return;
     }
     if (
@@ -194,6 +321,7 @@ export default function App() {
       setFifthh(<OSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsFifthClicked(true);
+      setFifthForWin(0);
       return;
     }
   };
@@ -211,6 +339,7 @@ export default function App() {
       setSixthh(<XSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsSixthClicked(true);
+      setSixthForWin(1);
       return;
     }
     if (
@@ -223,6 +352,7 @@ export default function App() {
       setSixthh(<OSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsSixthClicked(true);
+      setSixthForWin(0);
       return;
     }
   };
@@ -240,6 +370,7 @@ export default function App() {
       setSeventhh(<XSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsSeventhClicked(true);
+      setSeventhForWin(1);
       return;
     }
     if (
@@ -252,6 +383,7 @@ export default function App() {
       setSeventhh(<OSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsSeventhClicked(true);
+      setSeventhForWin(0);
       return;
     }
   };
@@ -269,6 +401,7 @@ export default function App() {
       setEighthh(<XSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsEighthClicked(true);
+      setEighthForWin(1);
       return;
     }
     if (
@@ -281,6 +414,7 @@ export default function App() {
       setEighthh(<OSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setIsEighthClicked(true);
+      setEighthForWin(0);
       return;
     }
   };
@@ -298,6 +432,7 @@ export default function App() {
       setNinthh(<XSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setisNinethClicked(true);
+      setNinethForWin(1);
       return;
     }
     if (
@@ -310,12 +445,20 @@ export default function App() {
       setNinthh(<OSVG />);
       setTicTacToeCounter(ticTacToeCounter + 1);
       setisNinethClicked(true);
+      setNinethForWin(0);
       return;
     }
   };
 
   return (
     <div className="App">
+      <h1 className="NumberOfXWins">
+        Number of ✖️ wins
+        <br />
+        ⬇️
+        <br />
+        <span>{xWinCounter}</span>
+      </h1>
       <div className="mainContainer">
         <section>
           <div className="container first" onClick={() => first()}>
@@ -351,6 +494,13 @@ export default function App() {
           </div>
         </section>
       </div>
+      <h1 className="NumberOfOWins">
+        Number of ⭕ wins
+        <br />
+        ⬇️
+        <br />
+        <span>{oWinCounter}</span>
+      </h1>
     </div>
   );
 }
